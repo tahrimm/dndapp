@@ -1,0 +1,215 @@
+/* CSS for the Task for the Fresher React JS Developers */
+body {
+  background-color:rgb(232, 251, 255);
+  margin: 0px;
+  padding: 0px;
+}
+
+.back{
+  margin: 20px;
+  padding: 0px;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+/* Styling for the upper section of the app */
+.upper {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom: 1px ridge rgb(196, 195, 195);
+  background: #f9f9f9;
+}
+
+/* Styling for the top section with checkboxes and delete button */
+
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+/* Styling for the "Gallery" title */
+
+#gall {
+  padding: 10px;
+  padding-left: 20px;
+  margin-bottom: 0px;
+
+}
+
+/* Styling for the checkbox container */
+
+.checkboxtop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f9f9f9;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 15px;
+  transition: background-color 0.2s;
+}
+.checkboxtop:hover {
+  background: #e5e5e5;
+}
+
+.checkboxtop .checkmark {
+  transition: opacity 0.2s;
+}
+
+.checkboxtop:hover .checkmark {
+  opacity: 1;
+}
+/* Styling for the "Delete File" button */
+
+.deletebutton {
+  color: red;
+  background-color: white;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.2s, color 0.2s;
+}
+.deletebutton:hover {
+  background-color: rgb(223, 77, 77);
+  color: white;
+}
+/* Styling for the grid layout of images */
+
+.image-grid {
+  --gap: 18px;
+  --num-cols: 5;
+  --row-height: 200px;
+  box-sizing: border-box;
+  padding: var(--gap);
+  display: grid;
+  grid-template-columns: repeat(var(--num-cols), 1fr);
+  grid-auto-rows: var(--row-height);
+  gap: var(--gap);
+}
+/* Styling for the images within the grid */
+
+.image-grid-item>img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+/* Styling for the individual grid items */
+
+.image-grid-item {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+/* Show checkbox on hover */
+.image-grid-item:hover .image-checkbox {
+  opacity: 1;
+}
+
+/* Show checkbox when checked */
+.image-grid-item.checked .image-checkbox {
+  transition: opacity 0.2s;
+  opacity: 1;
+}
+
+.image-grid-item>img:hover {
+  opacity: 0.5;
+  transform: scale(1.05);
+}
+
+.image-grid-item.checked {
+  opacity: 0.5;
+  /* Change the opacity to your desired level */
+}
+
+.image-checkbox {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 2;
+  transition: opacity 0.2s;
+  opacity: 0;
+}
+
+/* Style for checked checkboxes */
+
+
+.image-grid-item:hover {
+  opacity: 1;
+  
+}
+.image-grid-col-2 {
+  grid-column: span 2;
+}
+
+.image-grid-row-2 {
+  grid-row: span 2;
+}
+/* Styling for the "Add Image" section */
+.add-image-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f9f9f9;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.3s;
+  padding: 10px;
+  border: 2px dashed #4d4c4c;
+}
+
+.add-image-button:hover {
+  opacity: 0.4;
+  background-color: #a5a5a5;
+}
+
+/* Styling for the "Add Image" button icon */
+.add-image-icon {
+  font-size: 48px;
+  padding-left: 23px;
+}
+
+/* Styling for the "Add Image" button text */
+.add-image-text {
+  font-size: 18px;
+  color: #333;
+}
+
+/* Styling for grid items during drag and drop */
+/* Add border and background changes for visual feedback */
+.image-grid-item.dragging {
+  border: 1.5px dashed #4d4c4c;
+  background: #f9f9f9;
+  opacity: 0.6;
+}
+
+.image-grid-item.dragged-over {
+  border: 1.5px dashed #4d4c4c;
+  background: #f9f9f9;
+}
+
+/* Add transitions for smoother visual feedback */
+.image-grid-item {
+  transition: background-color 0.2s, opacity 0.2s, border-color 0.2s;
+}
+
+/* Anything under 1024px */
+/* Media query for smaller screens */
+/* Adjust the grid layout for better responsiveness */
+@media screen and (max-width: 1024px) {
+  .image-grid {
+    --num-cols: 2;
+    --row-height: 200px;
+  }
+}
